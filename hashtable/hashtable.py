@@ -47,6 +47,7 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        return self.keys / self.capacity
 
     def fnv1(self, key):
         """
@@ -150,6 +151,18 @@ class HashTable:
         Implement this.
         """
         # Your code here
+        old = self.storage
+
+        self.capacity = new_capacity
+
+        self.storage = [None] * new_capacity
+
+        for keys in old:
+            if keys:
+                current = keys
+            while current:
+                self.put(current.key, current.value)
+                current = current.next
 
 
 if __name__ == "__main__":
