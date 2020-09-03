@@ -115,6 +115,7 @@ class HashTable:
         if node.key == key:
             self.storage[index] = node.next
             return None
+        
         while node != None:
             if node.key == key:
                 prev.next = node.next
@@ -156,6 +157,7 @@ class HashTable:
         self.capacity = new_capacity
 
         self.storage = [None] * new_capacity
+        self.keys = 0
 
         for keys in old:
             if keys:
